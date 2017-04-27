@@ -97,9 +97,9 @@ $MAX
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	au! FileType python
-""1	LINE	0
+""0	LINE	0
+	Vim File Repository
+"1	LINE	0
 	"
 "2	LINE	0
 	" also only do so for python files
@@ -132,21 +132,23 @@ $MAX
 "9	LINE	0
 	" calibre syntax is avalable through mentor support
 "-	CHAR	0
-	 
+	y
 
 # File marks:
-'0  2  0  ~/.vimrc
-'1  1  11  ~/a.py
-'2  16  21  ~/.vimrc
-'3  36  4  ~/Documents/code_practice/cpp_code/length_of_last_word/length_of_last_word.cpp
-'4  6  0  ~/.vim/temp.py
-'5  14  0  ~/.vimrc
-'6  17  3  ~/Documents/code_practice/cpp_code/continuous_subarray_sum/continuous_subarray_sum.cpp
-'7  14  7  ~/Documents/code_practice/cpp_code/wiggle_sort_II/wiggle_sort_II.cpp
-'8  73  4  ~/Documents/code_practice/cpp_code/merge_two_sorted_lists/merge_two_sorted_lists.cpp
-'9  5  0  ~/Documents/code_practice/cpp_code/merge_two_sorted_lists/merge_two_sorted_list.cpp
+'0  6  67  ~/.vim/README.md
+'1  2  0  ~/.vimrc
+'2  1  11  ~/a.py
+'3  16  21  ~/.vimrc
+'4  36  4  ~/Documents/code_practice/cpp_code/length_of_last_word/length_of_last_word.cpp
+'5  6  0  ~/.vim/temp.py
+'6  14  0  ~/.vimrc
+'7  17  3  ~/Documents/code_practice/cpp_code/continuous_subarray_sum/continuous_subarray_sum.cpp
+'8  14  7  ~/Documents/code_practice/cpp_code/wiggle_sort_II/wiggle_sort_II.cpp
+'9  73  4  ~/Documents/code_practice/cpp_code/merge_two_sorted_lists/merge_two_sorted_lists.cpp
 
 # Jumplist (newest first):
+-'  6  67  ~/.vim/README.md
+-'  1  0  ~/.vim/README.md
 -'  2  0  ~/.vimrc
 -'  67  6  ~/.vimrc
 -'  35  15  ~/.vimrc
@@ -243,11 +245,20 @@ $MAX
 -'  4  8  ~/Documents/mono_apps/hello.cs
 -'  17  1  ~/Documents/java_apps/HelloWorld.java
 -'  26  9  ~/Documents/java_apps/HelloWorld.java
+-'  2  0  ~/.vimrc
 
 # Buffer list:
-%~/.vimrc	2	0
+%~/.vim/README.md	6	67
 
 # History of marks within files (newest to oldest):
+
+> ~/.vim/README.md
+	"	6	67
+	^	6	68
+	.	6	67
+	+	1	18
+	+	2	19
+	+	6	67
 
 > ~/.vimrc
 	"	2	0
@@ -631,93 +642,3 @@ $MAX
 	+	11	3
 	+	9	0
 	+	5	0
-
-> ~/Documents/code_practice/cpp_code/reverse_integer/reverse_integer.cpp
-	"	16	0
-	^	26	54
-	.	26	54
-	+	12	0
-	+	4	2
-	+	12	0
-	+	12	0
-	+	5	2
-	+	3	8
-	+	9	1
-	+	8	31
-	+	7	31
-	+	12	0
-	+	28	0
-	+	28	0
-	+	36	0
-	+	28	0
-	+	17	19
-	+	26	55
-	+	26	3
-	+	11	0
-	+	34	0
-	+	31	16
-	+	31	44
-	+	30	0
-	+	31	0
-	+	30	13
-	+	31	19
-	+	30	33
-	+	21	14
-	+	24	17
-	+	26	42
-	+	18	20
-	+	24	17
-	+	24	37
-	+	21	9
-	+	13	17
-	+	30	38
-	+	26	13
-	+	24	15
-	+	24	26
-	+	22	15
-	+	18	23
-	+	22	22
-	+	24	29
-	+	24	28
-	+	18	28
-	+	23	29
-	+	24	37
-	+	24	35
-	+	23	12
-	+	30	29
-	+	13	0
-	+	24	9
-	+	18	23
-	+	24	9
-	+	30	0
-	+	26	17
-	+	20	3
-	+	18	17
-	+	19	6
-	+	18	21
-	+	26	52
-	+	16	0
-	+	13	18
-	+	30	22
-	+	31	26
-	+	30	3
-	+	32	0
-	+	31	0
-	+	32	49
-	+	33	60
-	+	34	0
-	+	30	0
-	+	34	0
-	+	17	0
-	+	28	0
-	+	10	0
-	+	8	0
-	+	8	0
-	+	26	0
-	+	24	16
-	+	28	0
-	+	24	0
-	+	18	43
-	+	19	18
-	+	22	23
-	+	26	54
