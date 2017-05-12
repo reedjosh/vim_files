@@ -22,17 +22,22 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 syntax on
 
 " Set syntax for filetypes.
-au! BufRead,BufNewFile *cir   set filetype=spice
-au! BufRead,BufNewFile *spi   set filetype=spice
-au! BufRead,BufNewFile *tex   set filetype=tex
-au! BufRead,BufNewFile *cls   set filetype=tex
+augroup SetFiletypes
+ au BufRead,BufNewFile *.cir   set filetype=spice
+ au BufRead,BufNewFile *.spi   set filetype=spice
+ au BufRead,BufNewFile *.tex   set filetype=tex
+ au BufRead,BufNewFile *.cls   set filetype=tex
+augroup END
 
 " Source .vimrc or .vim files.
-au! FileType vim nnoremap <leader>s :source %<cr>
+au FileType vim nnoremap <leader>s :source %<cr>
 
 " Set latex compile hotkey.
-au! FileType tex nnoremap <leader>c :!latexmk -pdf -xelatex <cr><cr>
-au! FileType tex nnoremap <leader>v :!exec evince %<.pdf &<cr>
+augroup LatexCommands
+  au!               
+  au FileType tex nnoremap <leader>c :!latexmk -pdf -xelatex <cr><cr>
+  au FileType tex nnoremap <leader>v :!exec evince %<.pdf &<cr>
+augroup END
 
 " Disable error bells.
 set noerrorbells visualbell t_vb=
@@ -65,29 +70,26 @@ set mousemodel=popup
 
 " Set a color column to demarkate 72 column width for python files
 " This is only available in vim >= 7.3.
-au! FileType python set cc=79
+au FileType python set cc=79
 
-
-let python_highlight_all=1
-
-" don't use a swap file
+" Don't use a swap file
 set noswapfile
 
-" pipes out visual selection to command line
+" Pipes out visual selection to command line
 vnoremap <leader>q y:echom system("./test.tcl", shellescape(<C-r>"))
 
 
-" change buffer -- normal mode
+" Change buffer -- normal mode
 nnoremap <leader>n :w <bar> bnext<CR>
 nnoremap <leader>b :w <bar> bprevious<CR>
 
-" capitalize current word -- insert mode
+" Capitalize current word -- insert mode
 inoremap <C-u> <esc>viwUi
 
-" automatically read file on update
+" Automatically read file on update
 set autoread
 
-" reload file
+" Reload file
 nnoremap  <leader>e :edit<CR>
 
 " ctr-c copy -- visual mode only
@@ -97,26 +99,36 @@ vnoremap <C-c> "+y
 inoremap <C-v> <Esc>"+gPa
 vnoremap <C-v> "+gP
 
-" run current file
-nnoremap <leader>r : ! %:p <CR>
-autocmd filetype python nnoremap <leader>r :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <leader>r :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <leader>r :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 
-" remember upon exit
+" Run current file
+augroup RunThis
+  au!
+                          nnoremap <leader>r : ! %:p <CR>
+  au filetype python nnoremap <leader>r :w <bar> exec '!python '.shellescape('%')<CR>
+  au filetype c      nnoremap <leader>r :w <bar> exec '!gcc '.shellescape('%').' 
+\                                        -o '.shellescape('%:r').' 
+\                                        && ./'.shellescape('%:r')<CR>
+  au filetype cpp    nnoremap <leader>r :w <bar> exec '!g++ '.shellescape('%').' 
+\                                             -o '.shellescape('%:r').' 
+\                                             && ./'.shellescape('%:r')<CR>
+augroup END
+
+
+" Remember upon exit.
 "  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saves and restores the buffer list
-"  n... :  where to save the viminfo files
+"  "100 :  Will save up to 100 lines for each register
+"  :20  :  Up to 20 lines of command-line history will be remembered
+"  %    :  Saves and restores the buffer list
+"  n... :  Where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.vim/viminfo
 
 
-" restore cursor position on re-open
+" Restore cursor position on re-open
 function! ResCur()
   if line("'\"") <= line("$") 
     normal! g`" 
   endif
 endfunction
+
 au! BufWinEnter * call ResCur()
 
